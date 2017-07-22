@@ -55,17 +55,20 @@ function reword(wn) {
     });
 }
 var fd = fs.openSync('w.txt','a+');
+var fda = fs.openSync('wa.txt','a+');
 function zisf(keyword) {
     options['url'] = 'http://dict.youdao.com/w/' + keyword + '/#keyfrom=dict2.top';
-    request(options, function(err, res) {
+            fs.write(fda, keyword+"\n");
+    /*
+request(options, function(err, res) {
         if (err) {
             console.log(err);
         }
         var $ = cheerio.load(res.body);
         // var fy = [];
         if( $('.baav .phonetic').text().indexOf("['") >= 0){
-            fs.write(fd, keyword+"\n");
-           console.log(keyword);
+//            fs.write(fd, keyword+"\n");
+ //          console.log(keyword);
         }            
             // if ($(this).text()[1, 1] == "'") {
                 // fy = [];
@@ -76,14 +79,15 @@ function zisf(keyword) {
                 //记录单词
                 
             // }
+*/
        doone(); 
-    })
+//    })
 }
-var wn = 1;
+var wn = 47;
 function doone() {
    wn++;
-        if (wn < 5000) {
-            setTimeout(getworld, parseInt(Math.random()*(3000-500+1)+500,10), wn);
+        if (wn < 1504) {
+            setTimeout(getworld, parseInt(Math.random()*(1000-500+1)+500,10), wn);
         }
  
 }
