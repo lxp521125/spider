@@ -11,7 +11,7 @@ function downloadFile(uri, filename, callback) {
     fs.exists(filename, (exists) => {
         if (!exists) {
             var stream = fs.createWriteStream(filename);
-            request(uri).pipe(stream).on('error',function(e){
+            request(uri).pipe(stream).on('error', function(e) {
                 console.log('error');
                 console.error(e);
             }).on('close', callback);
@@ -55,3 +55,5 @@ request(options, function(err, res) {
 
     })
 })
+var a = 2323123;
+console.log(a);
